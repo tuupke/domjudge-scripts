@@ -27,8 +27,8 @@
   when: prom
 
 - name: Set promtail settings
-  copy:
-    src: promtail-local-config.yaml
+  template:
+    src: promtail-local-config.yaml.j2
     dest: /etc/promtail/
     owner: root
     group: root
